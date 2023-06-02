@@ -18,12 +18,13 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-
-ifeq ($(shell test $(TARGET_SCREEN_WIDTH) -gt 1080; echo $$?),0)
-LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res_1440p
-else
 LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res_1080p
-endif
+
+# ifeq ($(shell test $(TARGET_SCREEN_WIDTH) -gt 1080; echo $$?),0)
+# LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res_1440p
+# else
+# LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res_1080p
+# endif
 
 LOCAL_USE_AAPT2 := true
 
